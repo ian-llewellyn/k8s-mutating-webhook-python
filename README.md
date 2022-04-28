@@ -15,7 +15,7 @@ config:
     ]
 ```
 
-## Method 1 - clone this repo
+## Method 1 - Clone this repo
 ```bash
 git clone https://github.com/ian-llewellyn/k8s-mutating-webhook-python
 cd k8s-mutating-webhook
@@ -34,7 +34,7 @@ Now edit a namespace to include the label `environment: development`. When new P
 helm repo add ian-llewellyn-mwh https://raw.githubusercontent.com/ian-llewellyn/k8s-mutating-webhook-python/master/helm
 
 # Install the webhook - you must provide the TLS values and any other custom values
-helm upgrade --install --create-namespace -n webhooks --values tls-values.yaml --values local-values.yaml mwh chart
+helm upgrade --install --create-namespace -n webhooks --values tls-values.yaml --values local-values.yaml mwh ian-llewellyn-mwh/webhook
 ```
 
 Now edit a namespace to include the label `environment: development`. When new Pods are created in this namespace, the supplied patches will be applied.
